@@ -1,0 +1,68 @@
+.page-image-contact {
+    background: linear-gradient(rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.8)),
+      url("../img/contactBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #contact {
+    background-color: #f2f2f2;
+    background-image: url("../img/map-image.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  #contact .form-group {
+    margin-bottom: 25px;
+  }
+  
+  #contact .form-group input,
+  #contact .form-group textarea {
+    padding: 20px;
+  }
+  
+  #contact .form-group input.form-control {
+    height: auto;
+  }
+  
+  #contact .form-group textarea.form-control {
+    height: 248px;
+  }
+  
+  #contact .form-control:focus {
+    border-color: #e74c3c;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  
+  #contact::-webkit-input-placeholder {
+    font-weight: 700;
+    color: #ced4da;
+  }
+  
+  #contact:-moz-placeholder {
+    font-weight: 700;
+    color: #ced4da;
+  }
+  
+  #contact::-moz-placeholder {
+    font-weight: 700;
+    color: #ced4da;
+  }
+  
+  #contact:-ms-input-placeholder {
+    font-weight: 700;
+    color: #ced4da;
+  }
+  
+  #contact .btn-contact {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  
+  #contact .btn-contact:hover {
+    background-color: #fff;
+    color: #e74c3c;
+  }
+  

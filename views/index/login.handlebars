@@ -1,0 +1,48 @@
+{{#unless göster}}
+<div class="login-form box-login">
+  <form action="/user/login" method="post">
+    <h2 class="text-center">Log in</h2>
+    <div class="form-group">
+      <input class="form-control" name="email" type="email" placeholder="Username" required="required"/>
+    </div>
+    <div class="form-group">
+      <input class="form-control" name="password" type="password" placeholder="Password" required="required"/>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block" type="submit">Log in</button>
+    </div>
+    <div class="clearfix">
+      <label class="pull-left checkbox-inline">
+        <input type="checkbox"/> Remember me
+      </label>
+    </div>
+    <div class="content">
+      <div class="sifreunuttum"><a class="pull-right" href="#">Forgot Password?</a></div><br/>
+      <div class="hesapac">
+        <p class="text-center"><a href="/users/register">Create an Account</a></p>
+      </div>
+    </div>
+  </form>
+</div>
+{{/unless}}
+ {{#if göster}}
+   <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    404 Not Found</h2>
+                <div class="error-details">
+                   Sorry, an error has occurred, log out to access the requested page.
+                </div>
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+                        Take Me Home </a><a href="/contact" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact Support </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   {{/if}}

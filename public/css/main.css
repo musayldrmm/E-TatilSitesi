@@ -1,0 +1,53 @@
+/*nav bar section*/
+
+
+
+/*body section*/
+/* body {
+  background-color: white !important;
+}
+.a {
+  background-color: #42b77f;
+}
+.tourimg {
+  width: 284px;
+  height: 300px;
+  background-size: contain;
+}
+.detay {
+  background-color: #f7f7f7;
+}
+.detay p {
+  color: #999;
+}
+.detay span {
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+}
+.incele {
+  padding: 0.75rem 7rem;
+  background-color: #55c57a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  line-height: 50px;
+}
+ */
+
+/*----- logo----*/
+img.logo{
+  
+ float: left;
+ margin:0;
+ height:auto;
+ width: min(50vw, 90px);
+ 
+}
+
+.orange{
+  background-color: #FF8C00 !important ;
+}
+
