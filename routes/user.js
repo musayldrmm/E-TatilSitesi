@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 const bcrypt = require('bcryptjs');
+const cloudinary=require('../utils/cloudinary')
+const upload = require('../utils/multer')
 const saltRounds = 10;
 
 router.get("/login", function (req, res) {
@@ -10,28 +12,11 @@ router.get("/login", function (req, res) {
 router.get("/register", function (req, res) {
   res.render("index/sign");
 }) /
-  router.post("/register", async  (req, res) =>{
-    if (
-      req.body.name == "" ||
-      req.body.surname==""||
-      req.body.email == "" ||
-      req.body.mobilenumber == "" ||
-      req.body.adress == "" ||
-      req.body.Country == "" ||
-      req.body.City == "" ||
-      req.body.district == "" ||
-      req.body.password == ""
-    ) {
-      req.session.message = {
-        type: "danger",
-        intro: "Empty fields! ",
-        message: "Please insert the requested information.",
-      };
-      res.redirect("/");
-    } else {
+  router.post("/register",upload.single('image'), async  (req, res) =>{
       try {
         const hashedPwd = await bcrypt.hash(req.body.password, saltRounds);
-       await User.create({
+         const result = await cloudinary.uploader.upload(req.file.path)
+       let user = new User({
           name: req.body.name,
           surname:req.body.surname,
           email:req.body.email,
@@ -41,16 +26,19 @@ router.get("/register", function (req, res) {
           Country:req.body.Country,
           City:req.body.City,
           district:req.body.district,
+          avatar:result.secure_url,
+          cloudinary_id: result.public_id,
         });
+        console.log(result.cloudinary_id)
+        await user.save();
         res.redirect("/");
-       
       } catch (error) {
         console.log(error);
         res.status(500).send("Internal Server error Occured");
       }
        
      
-    }
+    
   });
 router.post("/login", async (req, res)=> {
   console.log("email:"+req.body.email)

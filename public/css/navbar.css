@@ -20,14 +20,20 @@
     margin-left: 3rem !important;
 }
 .profileimg{
- height: 50px;
+ height: 58px;
  width: 50px;
  border-radius: 60%;
+}
+.dropdownmargin{
+  margin-left: 3rem !important;
 }
 
 @media screen and (max-width: 992px) {
     
 .Leftspace{
     margin-left:1rem !important;
+}
+.dropdownmargin{
+  margin-left: 0 !important;
 }
   }

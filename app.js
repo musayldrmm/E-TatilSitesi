@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 8000;
 const mongoose = require("mongoose");
 //const http = '127.0.0.1';
 const main = require("./routes/main");
@@ -18,9 +17,11 @@ const singlepage = require("./routes/singlepage")
 const Handlebars = require('handlebars')
 const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+var methodOverride = require('method-override')
 app.engine('handlebars', expressHandlebars.engine({
   handlebars: allowInsecurePrototypeAccess(Handlebars)
 }));
+app.use(methodOverride('_method'));
 app.set('view engine', 'handlebars');
 app.use(
   expressSession({
@@ -29,7 +30,7 @@ app.use(
     resave: true,
     cookie: {maxAge: null},
     store: MongoStore.create({
-      mongoUrl:`your database`
+      mongoUrl:`mongodb+srv://webprg_2:fm441109@cluster0.m9oto.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
       })
   })
 );
@@ -66,6 +67,8 @@ app.use("/singlepage",singlepage);
 app.use("/user", user); //sign up ve login sayfasına yönlendirme
 app.use("/contact", contactus); //contact sayfasına yönlendirme
 app.use("/profilesetting",hesapdetay);
+app.use("/tour",tour);
+
 
 
 
@@ -73,7 +76,7 @@ app.use("/profilesetting",hesapdetay);
  
  mongoose
   .connect(
-    "your database",
+    "mongodb+srv://webprg_2:fm441109@cluster0.m9oto.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useCreateIndex: true,

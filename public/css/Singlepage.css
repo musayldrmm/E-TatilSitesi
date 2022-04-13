@@ -1,7 +1,6 @@
-.carousel-item.active img{
-    background-size: cover !important;
-  }
-  .singlepage{
-    background-color: green !important;
-  }
-  
+.carousel-item.active img {
+  background-size: cover !important;
+}
+.singlepage {
+  background-color: green !important;
+}

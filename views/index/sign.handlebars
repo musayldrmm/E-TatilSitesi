@@ -21,7 +21,7 @@
    {{/if}}
    {{#unless göster}}
 <div class="signup-form">
-  <form action="/user/register" method="POST">
+  <form action="/user/register" enctype="multipart/form-data" method="POST">
     <h2>Sign Up</h2>
     <p>Please fill in this form to create an account!</p>
     <hr/>
@@ -52,6 +52,10 @@
      <div class="form-group">
       <input class="form-control" type="text" name="district" placeholder="district" required="required"/>
     </div>
+    <div class="form-group">
+    <label for="exampleFormControlFile1">Profil fotoğrafı seçiniz.</label>
+    <input type="file" class="form-control-file" name="image"id="exampleFormControlFile1">
+  </div>
     <div class="form-group">
       <label class="checkbox-inline">
         <input type="checkbox" required="required"/> I accept the<a href="#">Terms of Use</a> &amp;<a href="#">Privacy Policy</a>
