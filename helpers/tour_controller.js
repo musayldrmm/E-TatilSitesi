@@ -27,12 +27,7 @@ exports.create = async (req, res, next) => {
             let bodyw = _.extend(body, {multiple_image: urls,name:req.body.name});
             let new_user = new tour_model(bodyw);
             await new_user.save()
-                .then(saved => {
-                    return res.json(saved);
-                }).catch(error => {
-                    return res.json(error);
-                })
-
+            res.redirect("/")
         }
         if (!urls) {
             return res.status(400)
@@ -43,20 +38,5 @@ exports.create = async (req, res, next) => {
         console.log("err :", e);
         return next(e);
     }
-
-};
-
-exports.find = (req, res, next) => {
-    tour_model.find()
-        .then(found => {
-            if (!found) {
-                return res.status(400)
-                    .json(vm.ApiResponse(false, 400, ""))
-            }
-            if (found) {
-                return res.status(200)
-                    .json(vm.ApiResponse(true, 200, "", found))
-            }
-        })
 
 };

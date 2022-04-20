@@ -46,6 +46,11 @@ img.logo{
  width: min(50vw, 90px);
  
 }
+.carousel-item.active img{
+  width:286px !important;
+  height:286px !important;
+  background-size: cover;
+}
 
 .orange{
   background-color: #FF8C00 !important ;

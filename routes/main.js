@@ -1,12 +1,22 @@
 const express = require('express');
 const router=express.Router();
 const user = require('../models/user');
-
+const Tour=require('../models/tours');
 router.get('/', function(req, res){
-    user.findById(req.session.userId).then(account=>{
-        res.render("index/anasayfa",{account:account});
-    })
-
+    const userfind=user.findById(req.session.userId)
+    const tourfind=Tour.find({})
+    Promise.all([
+        userfind,
+        tourfind,
+      ]).then(([
+        account,
+        post
+      ]) => {
+        res.render('index/anasayfa', { 
+            account,
+            post
+        });
+      })
 console.log(req.session);
 })
 

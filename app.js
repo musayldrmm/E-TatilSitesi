@@ -7,6 +7,7 @@ const user = require("./routes/user");
 const tour = require("./routes/tour");
 const contactus = require("./routes/contactus");
 const hesapdetay= require("./routes/hesapdetay");
+const payment= require("./routes/payment");
 var path = require("path");
 var bodyParser = require("body-parser");
 const flash = require("connect-flash");
@@ -43,8 +44,6 @@ app.use(express.static(__dirname + "/public")); //css ve image klasörlerinin pa
 app.use(cookieParser('secret'))
 //app.use(expressSession({cookie: {maxAge: null}}))
 app.use((req, res, next)=>{
-  res.locals.message = req.session.message
-  delete req.session.message
   const {userId}=req.session
   if(userId){
     res.locals={
@@ -68,7 +67,7 @@ app.use("/user", user); //sign up ve login sayfasına yönlendirme
 app.use("/contact", contactus); //contact sayfasına yönlendirme
 app.use("/profilesetting",hesapdetay);
 app.use("/tour",tour);
-
+app.use("/payment",payment);
 
 
 
