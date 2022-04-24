@@ -8,6 +8,7 @@ const tour = require("./routes/tour");
 const contactus = require("./routes/contactus");
 const hesapdetay= require("./routes/hesapdetay");
 const payment= require("./routes/payment");
+const orderdetail = require("./routes/order");
 var path = require("path");
 var bodyParser = require("body-parser");
 const flash = require("connect-flash");
@@ -68,6 +69,7 @@ app.use("/contact", contactus); //contact sayfasına yönlendirme
 app.use("/profilesetting",hesapdetay);
 app.use("/tour",tour);
 app.use("/payment",payment);
+app.use("/order",orderdetail);
 
 
 

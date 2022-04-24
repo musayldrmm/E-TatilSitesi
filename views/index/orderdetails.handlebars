@@ -1,0 +1,25 @@
+<div class="container">
+      <div class="row">
+            <div class="col-md-12" style="border: solid 1px;">
+                  <table class="table">
+                        <thead>
+                              <tr>
+                                    <th>Name</th>
+                                    <th>Tour name</th>
+                                    <th>Price</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            {{#each order}}
+                              <tr>
+                                    <td>{{name}}</td>
+                                    <td>{{tourname}}</td>
+                                    <td>{{price}}</td>
+                              </tr>
+                              {{/each}}
+                        </tbody>
+                  </table>
+            </div>
+
+      </div>
+</div>

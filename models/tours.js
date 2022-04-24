@@ -5,7 +5,7 @@ const tourSchema=new mongoose.Schema({
     tourname:{type:String},
     tourshortdesc:{type:String},
     tourdesc:{type:String},
-    tourprice:{type:String},
+    tourprice:{type:Number},
     multiple_image:{type:[]},
     //date:{type:Date,default:Date.now},
     //price:{type:Number,require:true}

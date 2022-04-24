@@ -17,6 +17,8 @@ router.get('/', function(req, res){
             post
         });
       })
+      exports.userıd=userfind;
+
 console.log(req.session);
 })
 
